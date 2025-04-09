@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'headerFooter.html' %}
+{% load static %}
+{% block main %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "css/checkout-stylesheet.css" %}/?v=1">
+        
+    </head>
+
+    <body style="background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url({% static 'ImageData/games.jpg' %});">
+      <div class="gradient-blur"></div>
+
+        <img id="bg" src="{% static 'ImageData/games.jpg' %}">
+
+
+        <div id="checkoutForm" class="container">
+            <h2 class="messageFont">Game: {{game.name}}</h2>
+            {% if isOwned %}
+              <p class="messageFont"> You already own {{game.name}}</p>
+            {% else %}
+              <h4 class="messageFont">Price: ${{game.price}} USD</p>
+                <br>  
+              <div id="paypalButton">{{paypal_payment_button.render}}</div>
+            {% endif %}
+            <br>
+            <a href="{% url 'pages:home' %}">
+              <button type="button" class="btn btn-success">Back to home page</button>
+          </a>
+        </div>
+    </body>
+    {% endblock main %}
+</html>

@@ -1,0 +1,89 @@
+{% extends 'headerFooter.html' %}
+{% load static %}
+<html>
+  {% block main %}
+
+  <link rel="stylesheet" href="{% static 'css/accountInfo-stylesheet.css'%}/?=v1">
+  <script src="{% static "js/accountInfo-js.js" %}"></script>
+    
+
+<body id="transparentBG" style="
+ background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url({% static 'ImageData/cover.webp' %});">
+ <div class="gradient-blur"></div>
+
+ <div id="userInfoForm" class="container smallFont">
+    <div class="container titleFont">
+       Account Information
+     </div>
+    
+     <div class="container smallFont">
+        
+       <div class="container">
+        <label class="mediumFont" for="username"><b>Username: </b></label>
+        <span class="smallFont">{{username}}</span>
+        <button class="btn btn-primary">Change Username</button>
+        <input id="nameInput" class="fade-in" type="text" placeholder="">
+       </div>
+
+        <div class="container">
+            <label class="mediumFont" for="email"><b>Email: </b></label>
+            <span class="smallFont">{{email}}</span>
+            <button class="btn btn-primary" onclick="openForm(emailInput)">Change Email</button>
+            
+            <div id="emailInput" class="container">
+              <form method="POST" class="fade-in">
+                {% csrf_token %}
+              <input class="fade-in" type="text" placeholder="Enter New Email" name="newEmail" required>
+              <div class="btn-div">
+                <button type="submit" name="emailSubmit">
+                  <span style="color: whitesmoke;">Submit</span></button>
+                </div>
+              </form>
+              
+            </div>
+             <br>
+        </div>
+
+         <div class="container">
+            <label class="mediumFont" for="phone"><b>Phone: </b></label>
+            <span class="smallFont">{{phone}}</span>
+            <button class="btn btn-primary">Change Phone</button>
+            <input id="phoneInput" class="fade-in" type="text" placeholder="">
+             <br>
+         </div>
+
+          <div class="container smallFont">
+            <label class="mediumFont" for="password"><b>Password: </b></label>
+            <span class="smallFont">*****</span>
+            <button class="btn btn-primary " onclick="openForm(passwordInput)">Change Password</button>
+            
+            <div id="passwordInput" class="container">
+              <form method="POST" class="" style="">
+                {% csrf_token %}
+              <input class="" type="password" placeholder="Enter current password" name="currentPassword" required>
+              
+              <input class="" type="password" placeholder="Enter New password" name="newPassword" required>
+              
+              <div class="btn-div">
+                <button type="submit" name="passwordSubmit">
+                  <span style="color: whitesmoke;">Submit</span></button>
+                </div>
+                
+              </form>
+            </div>
+            <p id="messages">
+            {% if messages %}
+              {% for message in messages %}
+                    {{ message }}
+                  {% endfor %}
+                {% endif %}
+            </p>
+          </div>
+           
+       
+    
+     </div>
+ </div>
+</body>
+  {% endblock main %}
+</html>

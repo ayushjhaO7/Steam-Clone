@@ -1,0 +1,51 @@
+{% extends 'productBase.html' %}
+{% load static %}
+{% block main %}
+<html>
+    <link rel="stylesheet" href="{% static "css/search-stylesheet.css" %}?/=v1">
+    <script src= "{% static "js/main-js.js" %}"></script>
+
+    
+
+    <body>
+
+        {% if games %}
+    <div id='searchResults' class='container'>
+            <form class="form" method='GET' action="{% url 'pages:searchByCategory' %}">
+                <input class="form-control" type="search" placeholder="Search" name="searched">
+                    <button id='searchButton' class="btn" type="submit"><img src="https://img.icons8.com/material-rounded/256/search.png">
+                    </button>
+                    <div id="categoryFilter">
+                        <label class="smallFont" for="category">Filter by category</label>
+                        <select name="category" id="categoryList">
+                            <option disabled selected value></option>
+                            {% for category in categories %}
+                                <option class="smallFont" value="{{category}}">{{category}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+              </form>
+        
+          
+        {% for game in games %}
+        <a href={% url 'game' game.id %}> 
+            <div class="gameCard">
+                    <img src="{{game.img_logo.url}}">
+                    <span class="gameName">{{game.name}}</span>
+                    <span>{{game.release_date}}</span>
+                    <span class="gamePrice">{{game.price}}$</span>
+                </div>
+        </a>
+        {% endfor %}
+        
+        {% else %}
+            <center>
+                <h1 id='notFound'>
+                    Your search of {{searched}} returned no results.
+                </h1>
+            </center>
+        {% endif %}
+    </div>
+    </body>
+    {% endblock main %}
+    </html>

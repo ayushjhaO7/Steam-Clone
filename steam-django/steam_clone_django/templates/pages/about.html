@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends 'pagesBase.html' %}
+{% load static %}
+{% block main %}
+<html>
+  <link rel="stylesheet" href="{% static 'css/about-stylesheet.css' %}?/v=1">
+  <script src="{% static 'js/about-js.js' %}"></script>
+
+
+    <body>
+        
+        <div class="container-fluid">
+            <div id="dimmed_about_block" style="background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url({% static "ImageData/games2.jpg" %});">
+                <img src="{% static "ImageData/games2.jpg" %}">
+                <h1 class="titleFont">Access Games Instantly</h1>
+                <p class="smallFont">
+                    With nearly 30,000 games from AAA to indie and everything in-between. 
+                    <br>
+                    Enjoy exclusive deals, automatic game updates, and other great perks.
+                </p>
+            </div>
+        </div>
+            
+
+            <div id="about_info_container" class="container">
+              <div class="container aboutBlock">
+                  <img class='slide-in-rtl' id="about_img1" src="https://cdn.cloudflare.steamstatic.com/store/about/cta_hero_community_pt3.png">
+                    
+                      <div class="fade-in">
+                        <h1 class="titleFont">Join The Community</h1>
+                        <p class="smallFont">
+                            Meet new people, join groups, form clans, chat in-game and more!
+                            <br>
+                            With over 100 million potential friends (or enemies), the fun never stops.
+                        </p>
+                        
+                      </div>
+              </div>
+              
+              
+              <div id='about_block2'>
+                  <img id="about_img2" class="slide-in-ltr" src="https://cdn.cloudflare.steamstatic.com/store/about/cta_hero_hardware.png">
+                  <div id="about_block2_text" class="fade-in"> 
+                    <h1 class="titleFont">Experience Steam Hardware</h1>
+                    <p class="smallFont">
+                        We created the Steam Controller and the VR technologies that power the HTC Vive to making gaming on the PC even better.
+                    </p>
+                  </div>
+              </div>
+              
+              <div class="container aboutBlock">
+                  <img class='slide-in-rtl' id="about_img3" src="https://cdn.cloudflare.steamstatic.com/store/about/cta_hero_steamworks.png">
+                  
+                 <div class="fade-in">
+                   <h1 class="titleFont">Release your Game</h1>
+                   <p class="smallFont">
+                       Steamworks is the set of tools and services that help <br> 
+                       game developers and publishers <br>get the most out of distributing games on Steam.
+                   </p>
+                  
+                 </div>
+                 
+              </div>
+              <br>
+            </div>
+        
+    </body>
+    {% endblock main %}
+</html>
+
+

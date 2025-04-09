@@ -1,0 +1,205 @@
+.darkNav{
+    background-color: #171a21;
+}
+.logoSmall{
+    width: 156.63px;
+    height: 36px;
+}
+.logoBig{
+    width: 176px;
+    height: 44px;
+}
+
+body{
+    background: rgb(27,40,56);
+    background: radial-gradient(circle, rgba(27,40,56,1) 0%, rgba(54,98,125,1) 0%, rgba(27,40,56,1) 100%);
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+a :hover{
+    transition: 0.3s;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+.menuItem{
+    display: block;
+    text-decoration: none;
+    padding: 7px;
+    padding-left: 15px;
+    color: #cccdce;
+}
+
+.menuItem:hover{
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 950px){
+.dropdown .dropdown-menu{
+    display: block;
+    opacity: 0;
+ }
+}
+
+.navbar-nav li:hover>.dropdown-menu {
+    display: block;
+    margin-top: 0px;
+    opacity: 1;
+    text-decoration: none;
+    animation: fade-in 150ms ease-in-out;
+    z-index: 5 !important;
+}
+
+.form-control{
+    background-color: #316282;
+    color: whitesmoke;
+    line-height: 2;
+    border:1px solid #316282;
+}
+
+.form-control:hover{
+    border:1px solid #3d9ad8  ;
+}
+
+.form-control:focus{
+    background-color: #316282;
+    color: whitesmoke;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 25;
+    top: 0;
+    left: 0;
+    background-color: #171a21;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 3%;
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 0px;
+    left: 6px;
+    padding: 10px;
+    padding-top: 3px;
+    font-size: 30px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+
+.container > a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+a > .gameCard > img {
+    width: 120px;
+    height: 45px;
+}
+
+.gameCard{
+    position: relative;
+    display: block;
+}
+
+.gameName{
+    width: 40%; display: inline-block
+}
+
+.gamePrice{
+    position: absolute; right: 5px; top: 25%
+}
+
+#notFound{
+    color: whitesmoke; margin-top: 20%
+}
+
+#searchResults{
+    width: 50%;
+    background-color: #101822; padding: 0px 0px 0px 0px; margin-top: 5%; z-index:1; position: relative;
+}
+
+div > form >.form-control{
+    width: 70%;
+    display: inline-block;
+    line-height: 0.5;
+}
+
+#searchButton{
+    background-color: #56a0cd;
+    position: absolute; top: 0px; right: 30%
+}
+
+#searchButton img{
+    width: 20px;
+    height: 20px;
+}
+
+#searchButton:hover{
+    background-color: #66bcef;
+    transition: 0.3s;
+}
+
+#categoryFilter{
+    display: block; position: absolute; right:3%; top:5%
+}
+
+#categoryList{
+    background-color: #316282; color: whitesmoke; border-radius: 5px;
+}
+
+.smallFont{
+    color: whitesmoke
+}
