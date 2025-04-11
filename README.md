@@ -20,10 +20,7 @@ Backend Functions Implemented:
 - Purchase games with PayPal (Sandboxed)
 - Search games with name and filter by category
 - Review games after purchase
-
-Demonstration video
-https://youtu.be/8Tcb9pLEsxs
-
+  
 ##  Pages:
 ### Sign Up
 ![Sign up](https://github.com/MazenYasser/steam-clone/assets/20987776/f2f0f1f0-fe91-4672-a1ba-985376158ee6)
